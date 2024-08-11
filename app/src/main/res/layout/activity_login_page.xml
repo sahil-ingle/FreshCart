@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
         android:fontFamily="@font/aclonica"
-        android:text="Login"
+        android:text="@string/login"
         android:textColor="@color/black"
         android:textSize="60sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -28,7 +28,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/cardboard_bg"
-        android:elevation="3dp"
+        android:elevation="5dp"
         android:orientation="vertical"
         android:paddingHorizontal="20dp"
         android:paddingTop="50dp"
@@ -41,45 +41,51 @@
 
 
         <EditText
+            android:id="@+id/email"
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_marginBottom="10dp"
             android:background="@drawable/input_field"
-            android:hint="Name"
+            android:hint="@string/email"
             android:textColorHint="@color/grey" />
 
         <EditText
+            android:id="@+id/password"
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_marginBottom="40dp"
             android:background="@drawable/input_field"
-            android:hint="Password"
+            android:hint="@string/password"
             android:textColorHint="@color/grey" />
 
         <TextView
+            android:id="@+id/forgetPasswordBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Forget Password?"
+            android:text="@string/forget_password"
             android:textColor="@color/black" />
 
 
     </LinearLayout>
 
-    <com.google.android.material.button.MaterialButton
+    <Button
         android:id="@+id/loginBtn"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
+        android:layout_width="340dp"
+        android:layout_height="60dp"
         android:layout_gravity="center"
         android:layout_marginTop="50dp"
-        android:backgroundTint="@color/primary_blue"
-        android:text="Login"
+        android:background="@drawable/button_bg"
+        android:elevation="10dp"
+        android:text="@string/login"
         android:textColor="@color/white"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <TextView
+        android:id="@+id/signUpBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"

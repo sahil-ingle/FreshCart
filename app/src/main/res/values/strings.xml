@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">FreshCart</string>
+    <string name="login">Login</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="forget_password">Forget Password?</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="register">Register</string>
+    <string name="already_have_account_sign_in">Already have Account? Sign In!</string>
 </resources>

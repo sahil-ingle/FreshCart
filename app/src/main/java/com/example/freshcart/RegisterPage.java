@@ -1,5 +1,6 @@
 package com.example.freshcart;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -19,5 +20,10 @@ public class RegisterPage extends AppCompatActivity {
         View view = binding.getRoot();
         setContentView(view);
 
+        binding.signInBtn.setOnClickListener(v -> {
+            startActivity(new Intent(RegisterPage.this, LoginPage.class));
+            overridePendingTransition(0, 0);
+            finish();
+        });
     }
 }

@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".RegisterPage">
 
     <TextView
@@ -26,7 +27,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/cardboard_bg"
-        android:elevation="3dp"
+        android:elevation="5dp"
         android:orientation="vertical"
         android:paddingHorizontal="20dp"
         android:paddingTop="50dp"
@@ -39,53 +40,59 @@
 
 
         <EditText
+            android:id="@+id/email"
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_marginBottom="10dp"
             android:background="@drawable/input_field"
-            android:hint="Name"
+            android:hint="@string/email"
             android:textColorHint="@color/grey" />
 
         <EditText
+            android:id="@+id/password"
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_marginBottom="10dp"
             android:background="@drawable/input_field"
-            android:hint="Password"
+            android:hint="@string/password"
             android:textColorHint="@color/grey" />
 
         <EditText
+            android:id="@+id/confirmPass"
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_marginBottom="30dp"
             android:background="@drawable/input_field"
-            android:hint="Confirm Password"
+            android:hint="@string/confirm_password"
             android:textColorHint="@color/grey" />
 
 
     </LinearLayout>
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/loginBtn"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
+    <Button
+        android:id="@+id/registerBtn"
+        android:layout_width="340dp"
+        android:layout_height="60dp"
         android:layout_gravity="center"
         android:layout_marginTop="50dp"
-        android:backgroundTint="@color/primary_blue"
-        android:text="Register"
+        android:background="@drawable/button_bg"
+        android:elevation="10dp"
+        android:text="@string/register"
         android:textColor="@color/white"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <TextView
+        android:id="@+id/signInBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Already have Account? Sign In!"
+        android:text="@string/already_have_account_sign_in"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/loginBtn" />
+        app:layout_constraintTop_toBottomOf="@id/registerBtn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
