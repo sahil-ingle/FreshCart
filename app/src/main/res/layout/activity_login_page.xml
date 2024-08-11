@@ -22,7 +22,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
@@ -39,7 +38,6 @@
         app:layout_constraintTop_toBottomOf="@+id/loginText"
         app:layout_constraintVertical_bias="0.3">
 
-
         <EditText
             android:id="@+id/email"
             android:layout_width="300dp"
@@ -51,17 +49,19 @@
             android:textColor="@color/black"
             android:textColorHint="@color/grey" />
 
+
         <EditText
             android:id="@+id/password"
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_marginBottom="40dp"
-            android:inputType="textPassword"
             android:background="@drawable/input_field"
+            android:drawableEnd="@drawable/ic_eye_close"
             android:hint="@string/password"
+            android:inputType="textPassword"
+            android:paddingEnd="10dp"
             android:textColor="@color/black"
             android:textColorHint="@color/grey" />
-
 
         <TextView
             android:id="@+id/forgetPasswordBtn"
@@ -71,6 +71,14 @@
             android:text="@string/forget_password"
             android:textColor="@color/black" />
 
+        <com.jpardogo.android.googleprogressbar.library.GoogleProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:visibility="gone"
+            app:type="folding_circles" />
 
     </LinearLayout>
 
