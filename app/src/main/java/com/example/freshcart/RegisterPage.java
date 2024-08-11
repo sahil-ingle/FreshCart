@@ -15,6 +15,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.freshcart.databinding.ActivityRegisterPageBinding;
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class RegisterPage extends AppCompatActivity {
 
     private ActivityRegisterPageBinding binding;
@@ -109,23 +112,47 @@ public class RegisterPage extends AppCompatActivity {
             if (task.isSuccessful()) {
                 startActivity(new Intent(this, HomePage.class));
                 finish();
-            } else {
-                binding.progressBar.setVisibility(View.GONE);
-                Toast.makeText(RegisterPage.this, "Wrong credietnails", Toast.LENGTH_SHORT).show();
             }
+        }).addOnFailureListener(e -> {
+            binding.progressBar.setVisibility(View.GONE);
+            Toast.makeText(RegisterPage.this, e.getMessage(), Toast.LENGTH_SHORT).show();
         });
     }
 
     private boolean validateDetails(String email, String pass, String confrimPass) {
-        if (email.isEmpty() || pass.isEmpty() || confrimPass.isEmpty()) {
-            Toast.makeText(RegisterPage.this, "Empty Credentials", Toast.LENGTH_LONG).show();
+        if (email.isEmpty()) {
+            Toast.makeText(RegisterPage.this, "Enter Email", Toast.LENGTH_LONG).show();
             return false;
-        } else if (!pass.matches(confrimPass)) {
+        } else if (pass.isEmpty()) {
+            Toast.makeText(RegisterPage.this, "Enter Password", Toast.LENGTH_LONG).show();
+            return false;
+        } else if (confrimPass.isEmpty()) {
+            Toast.makeText(RegisterPage.this, "Enter Confirm Password", Toast.LENGTH_LONG).show();
+            return false;
+        } else if (pass.length() < 8) {
+            Toast.makeText(RegisterPage.this, "Password Length must be Greater than 8", Toast.LENGTH_LONG).show();
+            return false;
+        } else if (!isValidPassword(pass)) {
+            Toast.makeText(RegisterPage.this, "Password Must contain at least an Upper/Lower letter, number and symbol", Toast.LENGTH_LONG).show();
+            return false;
+        } else if (!pass.equals(confrimPass)) {
             Toast.makeText(RegisterPage.this, "Password doesn't Match", Toast.LENGTH_LONG).show();
             return false;
         } else {
             return true;
         }
+
+    }
+
+    public static boolean isValidPassword(final String password) {
+
+        Pattern pattern;
+        Matcher matcher;
+        final String PASSWORD_PATTERN = "^(?=.*[0-9])(?=.*[A-Z])(?=.*[@#$%^&+=!])(?=\\S+$).{4,}$";
+        pattern = Pattern.compile(PASSWORD_PATTERN);
+        matcher = pattern.matcher(password);
+
+        return matcher.matches();
 
     }
 

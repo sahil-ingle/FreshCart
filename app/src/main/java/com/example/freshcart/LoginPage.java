@@ -10,11 +10,12 @@ import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.widget.TintableCompoundDrawablesView;
+
 
 
 import com.example.freshcart.databinding.ActivityLoginPageBinding;
 import com.google.firebase.auth.FirebaseAuth;
+
 
 public class LoginPage extends AppCompatActivity {
 
@@ -86,10 +87,10 @@ public class LoginPage extends AppCompatActivity {
                     if (task.isSuccessful()) {
                         startActivity(new Intent(LoginPage.this, HomePage.class));
                         finish();
-                    } else {
-                        binding.progressBar.setVisibility(View.GONE);
-                        Toast.makeText(LoginPage.this, "password wrong", Toast.LENGTH_LONG).show();
                     }
+                }).addOnFailureListener(e -> {
+                    binding.progressBar.setVisibility(View.GONE);
+                    Toast.makeText(LoginPage.this, e.getMessage(), Toast.LENGTH_LONG).show();
                 });
 
     }
@@ -105,4 +106,5 @@ public class LoginPage extends AppCompatActivity {
             return true;
         }
     }
+
 }
