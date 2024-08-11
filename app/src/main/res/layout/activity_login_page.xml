@@ -47,6 +47,8 @@
             android:layout_marginBottom="10dp"
             android:background="@drawable/input_field"
             android:hint="@string/email"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/black"
             android:textColorHint="@color/grey" />
 
         <EditText
@@ -54,9 +56,12 @@
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_marginBottom="40dp"
+            android:inputType="textPassword"
             android:background="@drawable/input_field"
             android:hint="@string/password"
+            android:textColor="@color/black"
             android:textColorHint="@color/grey" />
+
 
         <TextView
             android:id="@+id/forgetPasswordBtn"
