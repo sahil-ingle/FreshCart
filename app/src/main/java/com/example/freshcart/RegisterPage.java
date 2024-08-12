@@ -110,7 +110,7 @@ public class RegisterPage extends AppCompatActivity {
     private void signUp(String email, String pass) {
         mAuth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener(this, task -> {
             if (task.isSuccessful()) {
-                startActivity(new Intent(this, HomePage.class));
+                startActivity(new Intent(this, UserInfoPage.class));
                 finish();
             }
         }).addOnFailureListener(e -> {

@@ -44,6 +44,7 @@ dependencies {
     implementation(libs.constraintlayout)
     implementation("com.jpardogo.googleprogressbar:library:1.2.0")
     implementation(libs.firebase.auth)
+    implementation(libs.firebase.firestore)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
