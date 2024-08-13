@@ -7,19 +7,11 @@
     tools:context=".HomePage"
     android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="This is Home"
-        android:textSize="50sp"
-        android:layout_gravity="center"
-        />
 
-    <TextView
+    <Button
+        android:id="@+id/logOutBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:text="Hello"
-        android:layout_gravity="center"/>
+        android:text="Log out"/>
 
 </LinearLayout>
