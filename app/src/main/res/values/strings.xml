@@ -9,4 +9,8 @@
     <string name="already_have_account">Already have Account?</string>
     <string name="new_here">New Here?</string>
     <string name="sign_up">Sign Up!</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="name">Name</string>
+    <string name="address">Address</string>
+    <string name="save">Save</string>
 </resources>

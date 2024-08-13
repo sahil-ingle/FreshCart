@@ -5,8 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UserInfoPage"
-    android:background="@color/white">
+    android:background="@color/white"
+    tools:context=".UserInfoPage">
 
     <TextView
         android:id="@+id/enterInfoText"
@@ -38,14 +38,13 @@
         app:layout_constraintTop_toBottomOf="@+id/enterInfoText"
         app:layout_constraintVertical_bias="0.2">
 
-
         <ImageView
             android:id="@+id/profileImg"
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:layout_gravity="center"
             android:layout_marginBottom="20dp"
-            android:src="@drawable/ic_profile"/>
+            android:src="@drawable/ic_profile" />
 
         <EditText
             android:id="@+id/name"
@@ -86,8 +85,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginTop="50dp"
             android:visibility="gone"
-            android:layout_marginTop="30dp"
             app:type="folding_circles" />
 
     </LinearLayout>

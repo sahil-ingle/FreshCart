@@ -12,7 +12,6 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 
-
 import com.example.freshcart.databinding.ActivityLoginPageBinding;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -40,9 +39,8 @@ public class LoginPage extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
-        if (mAuth.getCurrentUser() != null){
+        if (mAuth.getCurrentUser() != null) {
             Intent intent = new Intent(this, HomePage.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
             finish();
         }
